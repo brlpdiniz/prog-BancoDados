@@ -1,10 +1,11 @@
+USE master
 CREATE DATABASE CarteiraVirtual
 GO
 
-CREATE SCHEMA Wallet
+USE CarteiraVirtual
 GO
 
-USE Wallet
+CREATE SCHEMA Wallet
 GO
 
 CREATE TABLE Wallet.Moeda (
@@ -94,18 +95,10 @@ CREATE INDEX indice_Quantidade
 	ON Wallet.ItemCarteira(Quantidade);
 GO
 
--- DROP TABLE Wallet.ParesMoedas
--- DROP TABLE Wallet.ItemCarteira
--- DROP TABLE Wallet.Moeda
--- DROP TABLE Wallet.Carteira
--- DROP TABLE Wallet.Cliente
--- DROP TABLE Wallet.Corretora
 
--- DROP SCHEMA Wallet
--- DROP DATABASE CarteiraVirtual
-
+	-- COMANDOS PARA DEBUG --
+	
 -- SELECT * FROM sys.schemas
-
 -- SELECT * FROM Wallet.Carteira;
 -- SELECT * FROM Wallet.Cliente;
 -- SELECT * FROM Wallet.Moeda;
