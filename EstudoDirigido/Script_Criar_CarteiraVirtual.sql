@@ -84,7 +84,7 @@ INSERT INTO Wallet.IntegrantesGrupo(Nome, GRR)
     VALUES ('Levi Passos do Pinho',2020245236);
 
 INSERT INTO Wallet.IntegrantesGrupo(Nome, GRR)
-    VALUES ('José Kozechen',2021161407);
+    VALUES ('José Kozechen Farias',2020132435);
 
 -- Inserção de valores (populando a tabela Moeda)
 INSERT INTO Wallet.Moeda(CodigoMoeda, Nome)
