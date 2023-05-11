@@ -1,0 +1,53 @@
+-- Cria Funcao Numero dependentes funcionarios
+CREATE FUNCTION NUM_DEP_FUNCIONARIOS( @cod INT )
+RETURNS INT
+AS
+BEGIN
+   DECLARE @NUM_DEP INT;
+   
+   SELECT @NUM_DEP = COUNT(*)
+     FROM DEPENDENTES
+	WHERE ID_FUNCIONARIO = @cod;
+
+   RETURN @NUM_DEP
+
+END
+GO
+
+-- Exemplos Utilizacao da funcao
+SELECT CODIGO,
+       NOME,
+	   DBO.NUM_DEP_FUNCIONARIOS(CODIGO) AS NUM_DEP
+FROM FUNCIONARIOS
+
+-- Exemplos chamada funcao na clausula where
+SELECT CODIGO,
+       NOME,
+	   DBO.NUM_DEP_FUNCIONARIOS(CODIGO) AS NUM_DEP
+FROM FUNCIONARIOS 
+WHERE DBO.NUM_DEP_FUNCIONARIOS(CODIGO) >= 1
+
+-- Cria Funcao Numero dependentes funcionarios
+CREATE FUNCTION NUM_DEP_FUNC_TIPO( @cod INT , @tipo INT )
+RETURNS INT
+AS
+BEGIN
+   DECLARE @NUM_DEP INT;
+   
+   SELECT @NUM_DEP = COUNT(*)
+     FROM DEPENDENTES
+	WHERE ID_FUNCIONARIO = @cod
+	  AND (TP_DEPENDENTE = @tipo
+	        OR @tipo = 0);
+
+   RETURN @NUM_DEP
+
+END
+GO
+
+-- Exemplos Utilizacao da funcao
+SELECT CODIGO,
+       NOME,
+	   DBO.NUM_DEP_FUNC_TIPO(CODIGO, 2) AS NUM_DEP
+FROM FUNCIONARIOS
+WHERE  DBO.NUM_DEP_FUNC_TIPO(CODIGO, 2) >= 1
