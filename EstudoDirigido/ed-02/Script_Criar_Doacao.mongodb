@@ -1,4 +1,4 @@
-use ColetaDoacao
+use ('ColetaDoacao')
 
 db.createCollection("Usuarios")
 db.createCollection("TipoDoacao")
