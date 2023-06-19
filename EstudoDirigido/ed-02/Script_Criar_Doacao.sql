@@ -1,70 +1,128 @@
-CREATE DATABASE Meu_Banco;
+use ColetaDoacao
 
-USE Meu_Banco;
+db.createCollection("Usuarios")
+db.createCollection("TipoDoacao")
+db.createCollection("Doacao")
+db.createCollection("NecessidadeDoacao")
+db.createCollection("Coleta")
 
-CREATE TABLE Usuario (
-    Id_Usuario Int PRIMARY KEY,
-    Endereco Varchar(100),
-    Telefone Varchar(11),
-    Email Varchar(50),
-    Tipo Varchar(11),
-    Senha Int
+db.Usuarios.insert(
+    {
+        Id_Usuario: 1,
+        Endereco: [
+            {
+                Rua:"Alexandre Von Humboldt",
+                Complemento:"Sobrado",
+                Cep:"82110000",
+                Cidade:"Curitiba",
+                Estado:"Parana",
+                Telefone:41999215821
+            }
+        ],
+        Email: "bruno.diniz1@utp.edu.br",
+        Tipo: "",
+        Senha: 1234567
+    }
+);
+    
+db.Usuarios.insert(
+    {
+        Id_Usuario: 2,
+        Endereco: [
+            {
+                Rua: "Padre Tiago Alberiane",
+                Complemento: "Casa",
+                Cep: "82020280",
+                Cidade: "Curitiba",
+                Estado: "Parana",
+                Telefone: 41988496995
+            }
+        ],
+        Email: "joao.moraes1@utp.edu.br",
+        Tipo: "",
+        Senha: 1234567
+    }
 );
 
-CREATE TABLE NecessidadeDoacao (
-    Id_Necessidade Varchar(11) PRIMARY KEY,
-    Id_Usuario int,
-    Data Date,
-    NomeAnimal Varchar(10),
-    Id_TipoDoacao Varchar(10),
-    Quantidade int
+db.Usuarios.insert(
+    {
+        Id_Usuario: 3,
+        Endereco: [
+            {
+                Rua: "",
+                Complemento: "",
+                Cep: "",
+                Cidade: "Curitiba",
+                Estado: "Parana",
+                Telefone: 41
+            }
+        ],
+        Email: "@utp.edu.br",
+        Tipo: "",
+        Senha: 1234567
+    }
 );
 
-CREATE TABLE TipoDoacao (
-    Id_TipoDoacao Varchar(11) PRIMARY KEY,
-    Descricao Varchar(11)
+db.Usuarios.insert(
+    {
+        Id_Usuario: 4,
+        Endereco: [
+            {
+                Rua: "",
+                Complemento: "",
+                Cep: "",
+                Cidade: "Curitiba",
+                Estado: "Parana",
+                Telefone: 41
+            }
+        ],
+        Email: "@utp.edu.br",
+        Tipo: "",
+        Senha: 1234567
+    }
 );
 
-CREATE TABLE Coleta (
-    Id_Doacao int,
-    Id_Necessidade Varchar(10),
-    Id_Usuario int,
-    DataColeta Date,
-    DataEntrega Date
+db.TipoDoacao.insert(
+    {
+        Id_TipoDoacao: 1,
+        Descricao: "Ração"
+    }
 );
 
-CREATE TABLE Doacao (
-    Id_Doacao int PRIMARY KEY,
-    Id_Usuario int,
-    Data Date,
-    Id_TipoDoacao Varchar(11),
-    Quantidade int
+db.TipoDoacao.insert(
+    {
+        Id_TipoDoacao: 2,
+        Descricao: "Xampu"
+    }
 );
- 
-ALTER TABLE NecessidadeDoacao ADD CONSTRAINT FK_NecessidadeDoacao_Usuario
-    FOREIGN KEY (Id_Usuario)
-    REFERENCES Usuario (Id_Usuario);
 
-ALTER TABLE NecessidadeDoacao ADD CONSTRAINT FK_NecessidadeDoacao_TipoDoacao
-    FOREIGN KEY (Id_TipoDoacao)
-    REFERENCES TipoDoacao (Id_TipoDoacao);
+db.Doacao.insert(
+    {
+        Id_Doacao: "",
+        Id_Usuario: "",
+        Data: "",
+        Id_TipoDoacao: "",
+        Quantidade: ""
+    }
+);
 
-ALTER TABLE Coleta ADD CONSTRAINT FK_Coleta_Doacao
-    FOREIGN KEY (Id_Doacao)
-    REFERENCES Doacao (Id_Doacao);
+db.NecessidadeDoacao.insert(
+    {
+        Id_Necessidade: "",
+        Id_Usuario: "",
+        Data: "",
+        NomeAnimal: "",
+        IdentificarTipoDoacao: "",
+        Quantidade: ""
+    }
+);
 
-ALTER TABLE Coleta ADD CONSTRAINT FK_Id_Usuario
-    FOREIGN KEY (Id_Usuario)
-    REFERENCES  Usuario (Id_Usuario);
-
-ALTER TABLE Coleta ADD CONSTRAINT FK_NecessidadeDoacao
-    FOREIGN KEY (Id_Necessidade)
-    REFERENCES NecessidadeDoacao (Id_Necessidade);
-
-ALTER TABLE Doacao ADD CONSTRAINT FK_Doacao_Usuario
-    FOREIGN KEY (Id_Usuario)
-    REFERENCES Usuario (Id_Usuario);
-
-ALTER TABLE Doacao ADD CONSTRAINT FK_Doacao_TipoDoacao
-    FOREIGN KEY (Id_TipoDoacao)
-    REFERENCES TipoDoacao (Id_TipoDoacao);
+db.Coleta.insert(
+    {
+        Id_Doacao: "",
+        Id_Necessidade: "",
+        Id_Usuario: "",
+        DataColeta: "",
+        DataEntrega: ""
+    }
+)
