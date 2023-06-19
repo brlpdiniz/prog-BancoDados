@@ -98,31 +98,70 @@ db.TipoDoacao.insert(
 
 db.Doacao.insert(
     {
-        Id_Doacao: "",
-        Id_Usuario: "",
-        Data: "",
-        Id_TipoDoacao: "",
-        Quantidade: ""
+        Id_Doacao: 1,
+        Id_Usuario: 1,
+        Data: "30/07/2023",
+        Id_TipoDoacao: 1,
+        Quantidade: "10kg"
+    }
+);
+db.Doacao.insert(
+    {
+        Id_Doacao: 2,
+        Id_Usuario: 2,
+        Data: "12/08/2023",
+        Id_TipoDoacao: 2,
+        Quantidade: "2l"
+    }
+);
+db.Doacao.insert(
+    {
+        Id_Doacao: 3,
+        Id_Usuario: 3,
+        Data: "20/10/2023",
+        Id_TipoDoacao: 1,
+        Quantidade: "5kg"
     }
 );
 
 db.NecessidadeDoacao.insert(
     {
-        Id_Necessidade: "",
-        Id_Usuario: "",
-        Data: "",
-        NomeAnimal: "",
-        IdentificarTipoDoacao: "",
-        Quantidade: ""
+        Id_Necessidade: 1,
+        Id_Usuario: 1,
+        Data: "20/11/2023",
+        NomeAnimal: "Nick",
+        Id_TipoDoacao: 1,
+        Quantidade: "10kg"
     }
 );
 
-db.Coleta.insert(
+db.NecessidadeDoacao.insert(
     {
-        Id_Doacao: "",
-        Id_Necessidade: "",
-        Id_Usuario: "",
-        DataColeta: "",
-        DataEntrega: ""
+        Id_Necessidade: 2,
+        Id_Usuario: 2,
+        Data: "11/07/2023",
+        NomeAnimal: "Gus",
+        Id_TipoDoacao: 2,
+        Quantidade: "3l"
     }
-)
+);
+db.NecessidadeDoacao.insert(
+    {
+        Id_Necessidade: 3,
+        Id_Usuario: 3,
+        Data: "11/11/2023",
+        NomeAnimal: "Chimpamze",
+        Id_TipoDoacao: 3,
+        Quantidade: "2l"
+    }
+);
+
+
+db.Coleta.insertMany([{ Id_Doacao: 1, Id_Necessidade: 1, Id_Usuario: 1, DataColeta: "10/02/2023", DataEntrega: "05/02/2023"},
+                       { Id_Doacao: 2, Id_Necessidade: 2, Id_Usuario: 2, DataColeta: "09/08/2023", DataEntrega: "04/08/2023"},
+                       { Id_Doacao: 3, Id_Necessidade: 3, Id_Usuario: 3, DataColeta: "14/04/2023", DataEntrega: "12/04/2023"}])
+
+        
+        
+        
+     
