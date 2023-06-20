@@ -1,4 +1,4 @@
-use ColetaDoacao
+use ('ColetaDoacao')
 
 db.createCollection("Usuarios")
 db.createCollection("TipoDoacao")
@@ -9,7 +9,7 @@ db.createCollection("Coleta")
 
 db.Usuarios.insertMany([{Id_Usuario: 1, Endereco: [{Rua: "Alexandre Von Humboldt", Complemento: "Sobrado", Cep: "82110000", Cidade: "Curitiba", Estado: "Parana", Telefone: 41999215821}],Email: "bruno.diniz1@utp.edu.br", Tipo: "", Senha: 1234567},
                    {Id_Usuario: 2, Endereco: [{Rua: "Padre Tiago Alberione", Complemento: "Casa", Cep: "82020280", Cidade: "Curitiba", Estado: "Parana", Telefone: 41988496995}],Email: "joao.moraes1@utp.edu.br", Tipo: "", Senha: 1234567},
-                   {Id_Usuario: 3, Endereco: [{Rua: "", Complemento: "", Cep: "", Cidade: "Curitiba", Estado: "Parana", Telefone: 41}],Email: "@utp.edu.br", Tipo: "", Senha: 1234567},
+                   {Id_Usuario: 3, Endereco: [{Rua: "João Volpe", Complemento: "Casa", Cep: "82320300", Cidade: "Curitiba", Estado: "Parana", Telefone: 41987002769}],Email: "levi.pinho@utp.edu.br", Tipo: "", Senha: 1234567},
                    {Id_Usuario: 4, Endereco: [{Rua: "", Complemento: "", Cep: "", Cidade: "Curitiba", Estado: "Parana", Telefone: 41}],Email: "@utp.edu.br", Tipo: "", Senha: 1234567}]);
 
 
